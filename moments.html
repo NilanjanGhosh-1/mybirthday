@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Memories</title>
+
+<style>
+body{
+    margin:0;
+    background: linear-gradient(135deg,#0f9bff,#fceabb);
+    font-family:Arial;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+h1{
+    color:white;
+    padding:20px;
+}
+
+/* gallery */
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    padding:20px;
+}
+
+.gallery img{
+    width:45%;
+    max-width:250px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    opacity:0;
+    transform:scale(0.8);
+    animation:fade 1s forwards;
+}
+
+@keyframes fade{
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>💛💛💛আমাদের একসাথে কাটানো সেরা মুহূর্ত । প্রিন্টার ও নাই তাই বাঁধিয়ে দিতেও পারলাম না। এখন তাই এভাবেই দেখো ।💛💛💛</h1>
+
+<div class="gallery" id="gallery"></div>
+
+<script>
+let gallery = document.getElementById("gallery");
+
+for(let i=1; i<=26; i++){
+    let img = document.createElement("img");
+    img.src = "mem" + i + ".jpg";
+    img.style.animationDelay = (i*0.1) + "s";
+    gallery.appendChild(img);
+}
+</script>
+
+</body>
+</html>
+

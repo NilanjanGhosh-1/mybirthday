@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Message</title>
+
+<style>
+body{
+    background: linear-gradient(135deg,#0f9bff,#fceabb);
+    font-family:Arial;
+    text-align:center;
+    padding:30px;
+    overflow:hidden;
+}
+
+.box{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    display:inline-block;
+    position:relative;
+    z-index:2;
+    max-width:95%;
+}
+
+button{
+    padding:10px 20px;
+    background:#0044ff;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    margin-top:15px;
+}
+
+/* floating elements */
+.float{
+    position:absolute;
+    bottom:-20px;
+    font-size:20px;
+    color:gold;
+    animation:floatUp linear infinite;
+    opacity:0.9;
+    font-weight:bold;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>💛💛Σε αγαπώ σοναι💙💙</h2>
+
+<p id="text"></p>
+
+<br>
+<button onclick="next()">Final Surprise</button>
+</div>
+
+<script>
+
+let msg = `শুভ জন্মদিন 🎂💞 অনু poki 🧿🧿
+💛💛রাধা রাধা সোনাই 💙💙
+
+তুমি আমার জীবনের সবথেকে সেরা উপহার।
+আমি হয়তো তোকে বেশি ভালো কিছু  গিফট দিতে পারলাম  না, কিন্তু একটা কথা দিচ্ছি—তোর পাশে তোর পোকা সবসময় থাকবে, সবসময় তোর হয়ে থাকবে। 😁
+
+আর আমার পত্নীদেবীর পতি হওয়ার অধিকারে একটা কথা বলি—মনে রাখবে, হাসি আর বিশ্বাস আমাদের শক্তি। এই হাসিটাকে আর বিশ্বাসটাকে  কখনও কমতে দোবো না আমরা ঠিক আছে, মনে রেখো এটা।😘😘
+
+ঈশ্বরের কৃপায় আমাদেরকে রাধারাণী একজোট করে রাখবে—এটাই আমার বিশ্বাস। 🧿🧿
+কখনও নিজেকে একা মনে করবে না । জানবে, তোমার পোকা আর রাধারাণী সবসময় তোমার পাশে আছে।
+
+পরের জন্মদিনে আমি যেন তোমাকে তোমার প্রিয় জায়গা বৃন্দাবনে নিয়ে যেতে পারি—এইটাই প্রার্থনা করি।
+ভগবান যেন সবসময় তোমাকে সুস্থ রাখে, খুব খুশি রাখে।
+
+        Se Agapo pokai 💞💛💙🥰`;
+
+let i=0;
+
+function type(){
+    if(i<msg.length){
+        document.getElementById("text").innerHTML += msg.charAt(i);
+        i++;
+        setTimeout(type,30);
+    }
+}
+type();
+
+function next(){
+    window.location.href="moments.html";
+}
+
+/* floating Radha + hearts */
+setInterval(()=>{
+    let el = document.createElement("div");
+    el.className="float";
+
+    if(Math.random() < 0.5){
+        el.innerHTML="💛";
+    }else{
+        el.innerHTML="Radha";
+    }
+
+    el.style.left=Math.random()*100+"vw";
+    el.style.fontSize=(16+Math.random()*18)+"px";
+    el.style.animationDuration=(5+Math.random()*4)+"s";
+
+    document.body.appendChild(el);
+
+    setTimeout(()=>{el.remove();},8000);
+},600);
+
+</script>
+
+</body>
+</html>
+
+

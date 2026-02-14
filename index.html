@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+
+<style>
+body{
+    margin:0;
+    background: linear-gradient(135deg,#0f9bff,#fceabb);
+    font-family: Arial;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+}
+
+/* Center box */
+.box{
+    position:relative;
+    top:5vh;
+}
+
+/* Images */
+.ashirbad{
+    width:80%;
+    max-width:350px;
+    border-radius:15px;
+    margin-bottom:15px;
+}
+
+.herphoto{
+    width:60%;
+    max-width:220px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+/* Hearts */
+.heart{
+    position:absolute;
+    color:yellow;
+    font-size:22px;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    from{ transform:translateY(100vh);}
+    to{ transform:translateY(-10vh);}
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    background:#0044ff;
+    color:white;
+    font-size:18px;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <!-- Ashirbad photo -->
+    <img src="ashirbad.jpg" class="ashirbad">
+
+    <!-- Her photo -->
+    <img src="herphoto.jpg" class="herphoto">
+    <h1> RADHA RADHA</h1>
+    <h2>💞🎂Happy Birthday🎂 Anu poki💞💛 </h2>
+     
+    <button onclick="nextPage()">Open Your Surprise</button>
+</div>
+
+<script>
+function nextPage(){
+    window.location.href="password.html";
+}
+
+/* create yellow hearts */
+setInterval(()=>{
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="💛";
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=(3+Math.random()*5)+"s";
+    document.body.appendChild(h);
+
+    setTimeout(()=>{h.remove();},6000);
+},400);
+</script>
+
+</body>
+</html>
